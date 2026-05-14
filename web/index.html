@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="noindex" />
+    <title>Business plan presentations</title>
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+  <body>
+    <main class="site">
+      <header class="site__header">
+        <p class="site__eyebrow">Business plan</p>
+        <h1 class="site__title">Presentations</h1>
+        <p class="site__lede">
+          Web-delivered, mobile-friendly decks rendered from sources in
+          <code>presentations/</code>. Replace this placeholder copy when the
+          plan is filled in.
+        </p>
+      </header>
+
+      <section class="site__decks" aria-label="Available decks">
+        <a class="deck-card" href="/investor/">
+          <h2 class="deck-card__title">Investor deck</h2>
+          <p class="deck-card__desc">
+            Concise external pitch: problem, solution, market, business model,
+            traction, financials, ask.
+          </p>
+          <span class="deck-card__cta">Open deck →</span>
+        </a>
+
+        <a class="deck-card" href="/internal/">
+          <h2 class="deck-card__title">Internal business plan</h2>
+          <p class="deck-card__desc">
+            Fuller operating context: customer discovery, GTM, operating plan,
+            financial assumptions, risks, milestones.
+          </p>
+          <span class="deck-card__cta">Open deck →</span>
+        </a>
+      </section>
+
+      <footer class="site__footer">
+        <p>
+          Decks are static HTML deployed via Vercel. Render sources with the
+          HTML-PPT skill and write the rendered <code>index.html</code> into
+          <code>web/investor/</code> or <code>web/internal/</code>.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

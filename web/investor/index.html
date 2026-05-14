@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="noindex" />
+    <title>Investor deck — placeholder</title>
+    <link rel="stylesheet" href="/styles/deck.css" />
+  </head>
+  <body class="deck">
+    <main class="deck__viewport">
+      <section class="slide" id="slide-1">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Investor deck</span>
+          <h1 class="slide__title">Placeholder</h1>
+          <p>
+            Render the investor deck from
+            <code>presentations/investor/deck.md</code> using the HTML-PPT skill
+            and write the rendered slides into this file. Keep the
+            <code>&lt;body class="deck"&gt;</code>,
+            <code>.deck__viewport</code>, <code>.slide</code>, and
+            <code>.deck__nav</code> layout so the mobile theme and navigation
+            keep working.
+          </p>
+          <aside class="slide__notes">
+            Speaker notes belong in <code>.slide__notes</code>. Hide them during
+            presentation with the <kbd>P</kbd> key.
+          </aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-2">
+        <div class="slide__inner">
+          <h2>Next step</h2>
+          <p>
+            Open the source deck at
+            <code>presentations/investor/deck.md</code>, fill in the slide
+            content, then re-render into this file. Pause for human review
+            before publishing anything investor-facing.
+          </p>
+          <p><a href="/">← Back to deck index</a></p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="deck__nav" aria-label="Slide navigation">
+      <button type="button" data-deck-prev aria-label="Previous slide">‹ Prev</button>
+      <span class="deck__progress" data-deck-progress aria-live="polite"></span>
+      <button type="button" data-deck-next aria-label="Next slide">Next ›</button>
+    </nav>
+
+    <script src="/scripts/deck.js"></script>
+  </body>
+</html>

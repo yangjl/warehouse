@@ -1,0 +1,255 @@
+/*
+ * Mobile-first responsive deck theme.
+ *
+ * Rendered decks (HTML-PPT skill output) can either:
+ *   1. Link this stylesheet and use the documented class names, or
+ *   2. Use this file as a reference for tokens and breakpoints.
+ *
+ * Layout contract:
+ *   <body class="deck">
+ *     <main class="deck__viewport">
+ *       <section class="slide" id="slide-1"> ... </section>
+ *       <section class="slide" id="slide-2"> ... </section>
+ *     </main>
+ *     <nav class="deck__nav"> ... </nav>
+ *   </body>
+ *
+ * Phones get one slide per scroll-snap viewport, portrait-friendly.
+ * Tablets and desktops keep the same content but with larger typography
+ * and side padding. Speaker notes are visible by default and can be
+ * collapsed via the .deck--present class on <body>.
+ */
+
+:root {
+  --deck-bg: #0b1220;
+  --deck-fg: #e7ecf3;
+  --deck-muted: #9aa6b8;
+  --deck-accent: #6ea8fe;
+  --deck-surface: #131c2e;
+  --deck-border: rgba(255, 255, 255, 0.08);
+  --deck-radius: 14px;
+  --deck-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --deck-max-width: 1080px;
+  --deck-gutter: clamp(16px, 5vw, 48px);
+  --deck-h1: clamp(1.6rem, 6.5vw, 3rem);
+  --deck-h2: clamp(1.2rem, 4.5vw, 1.8rem);
+  --deck-body: clamp(1rem, 2.6vw, 1.15rem);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --deck-bg: #f7f8fb;
+    --deck-fg: #0f172a;
+    --deck-muted: #475569;
+    --deck-accent: #2563eb;
+    --deck-surface: #ffffff;
+    --deck-border: rgba(15, 23, 42, 0.08);
+    --deck-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--deck-bg);
+  color: var(--deck-fg);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-size: var(--deck-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: contain;
+}
+
+.deck__viewport {
+  height: 100dvh;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--deck-gutter))
+    var(--deck-gutter)
+    calc(env(safe-area-inset-bottom, 0px) + var(--deck-gutter) + 64px);
+}
+
+.slide__inner {
+  max-width: var(--deck-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.slide h1,
+.slide__title {
+  font-size: var(--deck-h1);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+
+.slide h2 {
+  font-size: var(--deck-h2);
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+}
+
+.slide p,
+.slide li {
+  font-size: var(--deck-body);
+  color: var(--deck-fg);
+  max-width: 70ch;
+}
+
+.slide ul,
+.slide ol {
+  padding-left: 1.2em;
+  margin: 0 0 1em;
+}
+
+.slide li + li {
+  margin-top: 0.4em;
+}
+
+.slide__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--deck-muted);
+  margin-bottom: 0.6em;
+}
+
+.slide__notes {
+  margin-top: clamp(16px, 4vw, 28px);
+  padding: clamp(12px, 3vw, 18px);
+  background: var(--deck-surface);
+  border: 1px solid var(--deck-border);
+  border-radius: var(--deck-radius);
+  color: var(--deck-muted);
+  font-size: 0.95rem;
+}
+
+.slide__notes::before {
+  content: "Speaker notes";
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+  color: var(--deck-accent);
+}
+
+.deck--present .slide__notes {
+  display: none;
+}
+
+.deck__nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding:
+    8px var(--deck-gutter)
+    calc(env(safe-area-inset-bottom, 0px) + 8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background:
+    linear-gradient(
+      to top,
+      var(--deck-bg) 60%,
+      rgba(0, 0, 0, 0)
+    );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.deck__nav button,
+.deck__nav a {
+  pointer-events: auto;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--deck-border);
+  background: var(--deck-surface);
+  color: var(--deck-fg);
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.deck__nav button:focus-visible,
+.deck__nav a:focus-visible {
+  outline: 2px solid var(--deck-accent);
+  outline-offset: 2px;
+}
+
+.deck__progress {
+  pointer-events: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--deck-muted);
+  font-size: 0.9rem;
+  padding: 0 6px;
+}
+
+@media (orientation: landscape) and (min-width: 720px) {
+  .slide {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--deck-gutter));
+  }
+
+  .deck__nav {
+    bottom: 12px;
+    left: auto;
+    right: 12px;
+    background: none;
+    width: auto;
+  }
+}
+
+@media print {
+  .deck__viewport {
+    height: auto;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .slide {
+    min-height: auto;
+    page-break-after: always;
+  }
+  .deck__nav {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck__viewport {
+    scroll-behavior: auto;
+  }
+}

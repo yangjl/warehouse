@@ -1,0 +1,27 @@
+.DS_Store
+.ipynb_checkpoints/
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Rebuildable or local-only working files.
+cache/*
+!cache/.gitkeep
+
+# Keep generated reporting output intentional and reviewed.
+reports/*
+!reports/.gitkeep
+
+# Local exports and temporary files.
+*.tmp
+*.log
+
+# Vercel CLI local state — keep deploy config tracked, ignore local cache.
+.vercel/
