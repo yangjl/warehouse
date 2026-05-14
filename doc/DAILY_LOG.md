@@ -37,3 +37,11 @@ Each entry should include:
 - Files: `.github/copilot-instructions.md`, `.gitignore`, `AGENTS.md`, `CLAUDE.md`, `MEMORY.md`, `README.md`, `doc/DECISIONS.md`, `doc/ENVIRONMENT.md`, `doc/PITCH_DECK_PLAN.md`, `presentations/README.md`, `presentations/internal/deck.md`, `presentations/investor/deck.md`, `scripts/doctor.py`, `vercel.json`, `web/README.md`, `web/index.html`, `web/internal/index.html`, `web/investor/index.html`, `web/scripts/deck.js`, `web/styles/deck.css`, `web/styles/site.css`
 - Results or impact: The template now ships a deploy-ready, mobile-responsive site that Vercel can host directly from `web/`. `python3 scripts/doctor.py` reports 0 failures (the daily-log alignment warning is resolved by this entry).
 - Next: When the first real project renders its decks via the HTML-PPT skill, write the rendered HTML into `web/investor/index.html` and `web/internal/index.html`, then connect the repository to Vercel.
+
+## 2026-05-14 - draft Xu Logistics Center plan and internal deck
+
+- Commit: `c8b46bb`
+- Summary: Draft Xu Logistics Center plan and internal deck
+- Files: `README.md`, `doc/BUSINESS_ASSUMPTIONS.md`, `doc/BUSINESS_PLAN.md`, `doc/COMPETITIVE_LANDSCAPE.md`, `doc/CUSTOMER_DISCOVERY.md`, `doc/DECISIONS.md`, `doc/FINANCIAL_MODEL_NOTES.md`, `doc/MARKET_RESEARCH.md`, `doc/PITCH_DECK_PLAN.md`, `doc/PROJECT_STATUS.md`, `doc/WORKLOG.md`, `presentations/internal/deck.md`, `presentations/investor/deck.md`, `web/index.html`, `web/internal/index.html`, `web/investor/index.html`
+- Results or impact: Established the Xu Logistics Center project plan, assumption register, market/customer/competitive/financial notes, and rendered internal logistics-market deck. The current niche hypothesis is off-dock CY plus ag/feed transload first, with bonded storage as a secondary import-side option pending validation.
+- Next: Review the internal deck with Mr. Xu, confirm the parcel/APN/zoning facts, and start the first discovery wave with carriers, ag/feed exporters, importers, and a customs broker.
