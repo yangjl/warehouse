@@ -1,102 +1,99 @@
-# Internal Business Plan Deck
+# Internal Logistics Market Deck
 
-> Starter slide-by-slide source for the internal track. Use this when the audience is the founding team, an internal sponsor, or a non-investor reviewer who needs the full operating context. Render via the `html-ppt-skill`.
+> Source outline for the HTML-PPT rendered internal deck at `web/internal/index.html`.
 >
-> Render targets:
-> - `web/internal/index.html` is the web-delivered, mobile-responsive deck served by Vercel. Use the layout contract in `web/README.md` (viewport meta tag, `.deck` / `.deck__viewport` / `.slide` / `.slide__notes` / `.deck__nav` classes, `web/styles/deck.css`, `web/scripts/deck.js`).
-> - `reports/` is for offline or shareable exports (PDF, archived HTML).
+> Status: DRAFT, internal only, noindex. This is not a pitch deck.
 >
-> Authoring constraints:
-> - Mobile first: assume a portrait phone before a 16:9 laptop. Use responsive units (`clamp()`, `vh`, `dvh`) and aim for one main idea per slide.
-> - Keep speaker notes inside `<aside class="slide__notes">…</aside>` so the rendered deck stays reviewable.
-> - Touch targets (buttons, links) must be at least 44 × 44 px.
+> Theme direction: sober internal-report deck inspired by `corporate-clean` / `swiss-grid` from the HTML-PPT skill, adapted to the repository's mobile-first `web/` deck contract.
 
-## Slide 1 — Business Concept
+## Slide 1 - Where the warehouse niche actually is
 
-- One-sentence concept:
-- Origin and motivation:
-- Scope of this plan:
+- Internal research deck, not investor material.
+- Fact-based second look: rough location, global container flow, niche-market evidence.
+- Status: DRAFT - internal only.
 
-Speaker notes: bound the plan; what is in scope vs. out of scope.
+Speaker notes: Keep all market interpretation subject to Mr. Xu review, parcel verification, customer discovery, and professional checks.
 
-## Slide 2 — Customer Discovery
+## Slide 2 - Rough local location map
 
-- Segments studied:
-- Methods used:
-- Key signals:
+- Bunge Ave / I-29 is the rough planning geography.
+- Bunge lists 19560 Bunge Avenue, Council Bluffs, IA.
+- LoopNet references Bunge Rd & I-29 industrial land directly off I-29.
+- UP lists Council Bluffs as an intermodal location; BNSF lists Omaha/Gibson.
 
-Speaker notes: link to `doc/CUSTOMER_DISCOVERY.md` for raw evidence.
+Speaker notes: This map is not a parcel survey. It only confirms the freight neighborhood.
 
-## Slide 3 — Market Evidence
+## Slide 3 - Global container transportation loop
 
-- Market definition:
-- Sizing approach:
-- Confidence and gaps:
+- China / Northeast Asia origin ports.
+- LA / Long Beach gateway.
+- Inland rail/intermodal to Omaha / Council Bluffs.
+- Empty-box repositioning into ag/feed export programs.
 
-Speaker notes: separate validated evidence from inferred estimates.
+Speaker notes: Frame the opportunity as a loop, not a one-way import lane.
 
-## Slide 4 — Competitive Landscape
+## Slide 4 - Evidence signals
 
-- Direct competitors:
-- Substitutes:
-- White space:
+- USDA AMS: 2024 U.S. containerized grain shipments were 15.2 mmt, up 13%.
+- DDGS and soybeans were each 5.1 mmt.
+- USTR state profiles: Iowa + Nebraska 2024 ag exports total $21.9B.
 
-Speaker notes: include both ends of the spectrum — entrants and incumbents.
+Speaker notes: These are not revenue forecasts; they only establish that the category and regional export base are real.
 
-## Slide 5 — Business Model
+## Slide 5 - Where the niche market is
 
-- Offer:
-- Pricing:
-- Revenue streams:
-- Cost structure:
+- Primary hypothesis: carrier-named off-dock CY + food/feed-grade transload near Bunge Ave / I-29.
+- Secondary hypothesis: bonded storage for China/Asia-origin importers.
+- Do not lead with generic warehouse demand.
 
-Speaker notes: link assumptions to `doc/BUSINESS_ASSUMPTIONS.md`.
+Speaker notes: Bonded storage should become central only if importer interviews support it.
 
-## Slide 6 — Go-to-Market Plan
+## Slide 6 - Market fit ranking
 
-- Channels:
-- Sales motion:
-- Acquisition cost assumptions:
+| Demand pocket | Evidence signal | Current fit |
+|---|---|---|
+| DDGS / soybean / soybean-meal container export transload | USDA AMS 2024 containerized grain export data | High |
+| Iowa / Nebraska ag and feed exporters | USTR state export profiles | High |
+| China / Asia import distributors needing duty timing | FMC / Port LA / USTR tariff context | Medium |
+| Generic 3PL overflow warehouse | Plausible but less differentiated | Medium-low |
 
-Speaker notes: identify the single largest unknown.
+Speaker notes: Use this ranking to sequence customer discovery.
 
-## Slide 7 — Operating Plan
+## Slide 7 - What is not proven
 
-- Team and roles:
-- Operating cadence:
-- Tooling and infrastructure:
+- Parcel and site feasibility: APN, zoning, title, truck turning, stormwater, geotech, floodplain.
+- Customer evidence: carrier depot naming, weekly ag/feed boxes, importer willingness to pay for bonded storage.
 
-Speaker notes: note any hires or vendor decisions that gate execution.
+Speaker notes: Keep the gaps visible so the plan stays factual.
 
-## Slide 8 — Financial Assumptions
+## Slide 8 - Validation plan
 
-- Revenue model:
-- Cost model:
-- Funding need:
-- Scenarios:
+- Wave 1: 3 carriers.
+- Wave 2: 4 ag/feed exporters.
+- Wave 3: 3 importers + customs broker.
+- Decision threshold: at least two carriers and two ag/feed exporters showing operationally specific demand.
 
-Speaker notes: cite `doc/FINANCIAL_MODEL_NOTES.md`; flag review status.
+Speaker notes: Discovery should follow the strongest evidence first.
 
-## Slide 9 — Risks
+## Slide 9 - Human review decision
 
-- Market risks:
-- Execution risks:
-- Regulatory or legal risks:
+- Should the plan pivot its center of gravity from "warehouse + bonded warehouse" to "off-dock CY + ag/feed transload first"?
+- If yes: prioritize CY capacity, gate controls, transload pad, and carrier requirements.
+- If no: gather stronger importer and customs-broker evidence before making bonded warehousing the lead thesis.
 
-Speaker notes: pair each risk with the leading indicator that would warn early.
+Speaker notes: This is the strategy gate for Mr. Xu, not a final conclusion.
 
-## Slide 10 — Milestones
+## Slide 10 - Source trail
 
-- Next 90 days:
-- 12-month plan:
-- Decision points:
+- Bunge Council Bluffs location.
+- LoopNet Bunge Rd & I-29.
+- Union Pacific intermodal map.
+- BNSF intermodal service details.
+- FMC FY2025 Annual Report.
+- Port of Los Angeles Facts and Figures.
+- USDA AMS Grain Transportation Report.
+- USTR Iowa and Nebraska profiles.
+- 19 CFR 19.1.
+- USTR Section 301 action.
 
-Speaker notes: cite `doc/PROJECT_STATUS.md`.
-
-## Slide 11 — Decisions Needed
-
-- Open decisions:
-- Required input:
-- Deadlines:
-
-Speaker notes: name owners and dates.
+Speaker notes: Keep source trail in the deck so internal reviewers can audit the claims.

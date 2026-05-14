@@ -9,6 +9,15 @@ Record important project decisions and the reasoning behind them. Keep entries s
 - **Alternatives considered**: what else you looked at (optional)
 - **Status**: active / superseded / revisit by [date]
 
+## 2026-05-14
+
+### Internal deck rebuilt as a fact-based logistics market deck
+
+- Decision: rebuild the internal deck around a fact-based logistics and niche-market map rather than the broader placeholder internal business-plan outline. The rendered deck is `web/internal/index.html`, with source outline in `presentations/internal/deck.md`.
+- Why: the current planning need is not an investor pitch; it is an internal decision deck to test the rough site location, China-to-Midwest container flow, and the narrower niche hypothesis of off-dock CY + ag/feed transload first, bonded storage second.
+- Alternatives considered: keep the original broad internal deck outline (too generic for the user's request); use the one-page report only (not a real deck); render investor-style pitch language (rejected because the request was internal research, not pitch).
+- Status: active, pending Mr. Xu review.
+
 ## 2026-05-13
 
 ### Mobile-friendly web delivery via Vercel
@@ -140,6 +149,35 @@ Record important project decisions and the reasoning behind them. Keep entries s
 - Why: these fields give humans and AI assistants enough shared context to start work without over-specifying project-specific details.
 - Alternatives considered: a larger metadata schema, but that would make project startup heavier than needed.
 - Status: superseded by the 2026-05-13 business planning metadata.
+
+## 2026-05-13 (Xu Logistics Center project kickoff)
+
+### Initialize the first business plan from the template — Xu Logistics Center
+
+- Decision: use this repository to develop the business plan for **Xu Logistics Center**, a 21-acre inland container yard, transloading, and warehouse (standard + bonded) facility along I-29 near Bunge Avenue, on the east side of the Missouri River, opposite Omaha, NE. README and `doc/` planning files populated as DRAFT v0.1.
+- Why: Mr. Xu has a 21-acre site, 40+ years of ocean freight experience, and 7 years of trucking operations. The intersection of those three assets and an inland intermodal location adjacent to Bunge and UP's Council Bluffs Yard fits the carrier-neutral, multi-service inland-gateway thesis.
+- Alternatives considered: scoping a single-line CY-only business (rejected because the bonded and warehouse upside is the highest-margin layer and Mr. Xu has the customer pipeline for it); scoping a warehouse-only play (rejected because it forfeits the empty-container imbalance opportunity and the ocean-freight pedigree).
+- Status: active.
+
+### Treat the site as Council Bluffs, Iowa, not Omaha, Nebraska
+
+- Decision: write the plan with the site located in **Council Bluffs, Pottawattamie County, Iowa**, and apply Iowa state tax, zoning, and incentive frameworks throughout. The description "east of Omaha, NE near Bunge Avenue along Interstate 29" is geographically on the Iowa side of the Missouri River; Bunge Avenue serves Bunge's CB soybean complex.
+- Why: state of record drives property tax, incentive eligibility (IEDA, HQJP, Urban Revitalization Plan vs. Nebraska Advantage Act), highway access (IDOT), environmental regulator (Iowa DNR), and labor authority (IWD). Getting this wrong cascades into the financial model and the regulatory timeline.
+- Alternatives considered: treating the site as Nebraska (only correct if the parcel is actually west of the river, which would conflict with the Bunge Avenue / I-29 reference). Flagged for Mr. Xu's confirmation.
+- Status: active, pending Mr. Xu confirmation.
+
+### Phased buildout — CY → standard warehouse → bonded warehouse
+
+- Decision: structure the project as Phase 1 (CY + transload + initial equipment), Phase 2 (standard warehouse), Phase 3 (bonded warehouse with optional FTZ subzone), with Phase 4 reserved for heavy M&R / reefer expansion.
+- Why: phasing matches both capital efficiency (cash flow from CY funds part of Phase 2) and regulatory critical path (CBP application can run in parallel with Phase 2 construction).
+- Alternatives considered: single Phase 1 ribbon-cutting of all four service lines (rejected — concentrates capex risk and forces simultaneous customer ramps); CY-only build with no warehouse (rejected — leaves the highest-margin segment on the table).
+- Status: active.
+
+### Pricing, capex, opex, and forecasts are DRAFT until Mr. Xu, CPA, engineer, and customs broker review
+
+- Decision: every number in the planning documents carries a DRAFT marker and is excluded from external use until the six approvals listed at the bottom of `doc/BUSINESS_PLAN.md` are logged here.
+- Why: this is a human-in-the-loop business plan; investor-facing claims require professional review.
+- Status: active.
 
 ## 2026-05-13
 

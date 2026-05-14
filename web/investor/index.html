@@ -9,43 +9,339 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#0b1220" />
     <meta name="robots" content="noindex" />
-    <title>Investor deck — placeholder</title>
+    <title>Xu Logistics Center — Investor Deck (DRAFT v0.1)</title>
     <link rel="stylesheet" href="/styles/deck.css" />
+    <style>
+      /* Local refinements layered on top of the shared deck theme. */
+      .slide__draft {
+        display: inline-block;
+        margin-left: 0.5em;
+        padding: 2px 8px;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        background: rgba(110, 168, 254, 0.15);
+        color: var(--deck-accent);
+        border: 1px solid var(--deck-border);
+        vertical-align: middle;
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px 16px;
+        margin: 0.6em 0 1em;
+      }
+      @media (min-width: 640px) {
+        .kv {
+          grid-template-columns: max-content 1fr;
+        }
+      }
+      .kv dt {
+        color: var(--deck-muted);
+        font-size: 0.9rem;
+      }
+      .kv dd {
+        margin: 0;
+      }
+      .pillars {
+        display: grid;
+        gap: 12px;
+        margin: 0.6em 0 1em;
+      }
+      .pillar {
+        padding: 14px 16px;
+        background: var(--deck-surface);
+        border: 1px solid var(--deck-border);
+        border-radius: var(--deck-radius);
+      }
+      .pillar h3 {
+        margin: 0 0 0.3em;
+        font-size: 1rem;
+        color: var(--deck-accent);
+      }
+      .pillar p {
+        margin: 0;
+      }
+      .fin-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.5em 0 1em;
+        font-size: clamp(0.85rem, 2.4vw, 0.95rem);
+      }
+      .fin-table th,
+      .fin-table td {
+        padding: 8px 6px;
+        border-bottom: 1px solid var(--deck-border);
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      .fin-table th:first-child,
+      .fin-table td:first-child {
+        text-align: left;
+        color: var(--deck-muted);
+        font-weight: 500;
+      }
+      .fin-table thead th {
+        color: var(--deck-muted);
+        font-weight: 500;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+      }
+      .lede {
+        font-size: clamp(1.05rem, 2.8vw, 1.25rem);
+        color: var(--deck-fg);
+        max-width: 60ch;
+      }
+      .roadmap {
+        list-style: none;
+        padding: 0;
+        margin: 0.5em 0 1em;
+        display: grid;
+        gap: 10px;
+      }
+      .roadmap li {
+        padding: 12px 14px;
+        background: var(--deck-surface);
+        border: 1px solid var(--deck-border);
+        border-radius: var(--deck-radius);
+      }
+      .roadmap li strong {
+        color: var(--deck-accent);
+        display: block;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 0.25em;
+      }
+    </style>
   </head>
   <body class="deck">
     <main class="deck__viewport">
-      <section class="slide" id="slide-1">
+
+      <!-- Slide 1 — Cover -->
+      <section class="slide" id="slide-1" aria-label="Cover">
         <div class="slide__inner">
-          <span class="slide__eyebrow">Investor deck</span>
-          <h1 class="slide__title">Placeholder</h1>
-          <p>
-            Render the investor deck from
-            <code>presentations/investor/deck.md</code> using the HTML-PPT skill
-            and write the rendered slides into this file. Keep the
-            <code>&lt;body class="deck"&gt;</code>,
-            <code>.deck__viewport</code>, <code>.slide</code>, and
-            <code>.deck__nav</code> layout so the mobile theme and navigation
-            keep working.
-          </p>
+          <span class="slide__eyebrow">Investor Deck<span class="slide__draft">Draft v0.1</span></span>
+          <h1 class="slide__title">Xu Logistics Center</h1>
+          <p class="lede">The carrier-neutral inland gateway for Omaha &amp; Council Bluffs. Container yard. Transloading. Standard &amp; US Customs bonded warehousing. On one 21-acre site along I-29.</p>
+          <dl class="kv">
+            <dt>Site</dt><dd>21 acres, east of Omaha, NE, fronting Interstate 29 near Bunge Avenue (Council Bluffs, Iowa)</dd>
+            <dt>Founder</dt><dd>Mr. Xu — 40+ years in ocean freight &amp; logistics; 7 years operating his own trucking company</dd>
+            <dt>Audience</dt><dd>Phase 1 senior debt and equity partners</dd>
+            <dt>Date</dt><dd>2026</dd>
+          </dl>
           <aside class="slide__notes">
-            Speaker notes belong in <code>.slide__notes</code>. Hide them during
-            presentation with the <kbd>P</kbd> key.
+            Open by naming the decision in the room: a Phase 1 capital commitment of $18M–$24M to build the container yard, transload pad, and supporting infrastructure on a site Mr. Xu already controls. Frame Mr. Xu's ocean-freight pedigree and existing trucking company as why this is the right founder for an inland intermodal play in this corridor. All numbers in this deck are DRAFT and pending review.
           </aside>
         </div>
       </section>
 
-      <section class="slide" id="slide-2">
+      <!-- Slide 2 — Problem -->
+      <section class="slide" id="slide-2" aria-label="Problem">
         <div class="slide__inner">
-          <h2>Next step</h2>
-          <p>
-            Open the source deck at
-            <code>presentations/investor/deck.md</code>, fill in the slide
-            content, then re-render into this file. Pause for human review
-            before publishing anything investor-facing.
-          </p>
-          <p><a href="/">← Back to deck index</a></p>
+          <span class="slide__eyebrow">Problem</span>
+          <h2>The Midwest is structurally short of containers — at exactly the wrong moments.</h2>
+          <ul>
+            <li><strong>Empty-box scarcity at origin.</strong> Inbound consumer goods plus outbound ag exports create chronic imbalance. Exporters wait for empties that are not where they need to be.</li>
+            <li><strong>Dwell &amp; demurrage at congested ramps.</strong> Coastal ports and inland rail terminals impose penalties that compound across the supply chain.</li>
+            <li><strong>No integrated alternative locally.</strong> Omaha / Council Bluffs has no carrier-neutral facility combining container yard, transload, and bonded warehousing on one footprint.</li>
+          </ul>
+          <aside class="slide__notes">
+            This is the single point Mr. Xu has heard for a decade from Midwest exporters and steamship lines. "Where is my empty?" is a chronic customer-service problem for carriers and a chronic cost line for shippers. Tie the pain to specific dollars: a delayed empty can cost an exporter a weekly vessel slot; a misplaced chassis can park a load for days. Quote a customer when interviews land in `doc/CUSTOMER_DISCOVERY.md`.
+          </aside>
         </div>
       </section>
+
+      <!-- Slide 3 — Solution -->
+      <section class="slide" id="slide-3" aria-label="Solution">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Solution</span>
+          <h2>One 21-acre site. Four service lines. One operator.</h2>
+          <div class="pillars">
+            <div class="pillar"><h3>Container Yard</h3><p>1,000–1,300 TEU static slots. OCR + RFID gate. Chassis access. Light M&amp;R. Carrier-neutral.</p></div>
+            <div class="pillar"><h3>Transload</h3><p>Bulk ↔ container ↔ truck ↔ rail. Food-grade SOPs. Designed for ag-export surge.</p></div>
+            <div class="pillar"><h3>Standard Warehouse</h3><p>~100,000 sq ft tilt-up. Rack &amp; floor storage. Regional distribution, kitting, labeling.</p></div>
+            <div class="pillar"><h3>Bonded Warehouse</h3><p>~40,000 sq ft, 19 CFR Part 19 Class 3. Deferred duty. FTZ #64 subzone as alternate path.</p></div>
+          </div>
+          <p>Plus <strong>captive drayage</strong> from Mr. Xu's existing trucking company.</p>
+          <aside class="slide__notes">
+            The differentiator is not any single service line — it is stacking them on one site, with one TOS, one billing relationship, and one operator. That lowers customer switching cost and increases share of wallet. Site adjacency to Bunge's CB soybean complex, UP Council Bluffs Yard (~5 truck miles), BNSF flows, and the I-29 / I-80 / I-480 interchange is the locational moat.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 4 — Why Now -->
+      <section class="slide" id="slide-4" aria-label="Why Now">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Why Now</span>
+          <h2>Three tailwinds overlap, and the site is already controlled.</h2>
+          <ul>
+            <li><strong>Containerized ag exports are growing.</strong> Specialty soy, DDGS, and pork programs increasingly move in boxes rather than bulk.</li>
+            <li><strong>Tariff volatility makes bonded &amp; FTZ status valuable again.</strong> Section 301, IEEPA-based, and AD/CVD duties drive demand for deferred-duty storage.</li>
+            <li><strong>Inland inventory regionalization.</strong> Importers are pushing 3PL footprint out of LA / IE / Chicago into upper-Midwest nodes.</li>
+            <li><strong>Carrier strategies favor named off-dock depots.</strong> Empty repositioning costs make inland depot networks more important, not less.</li>
+          </ul>
+          <aside class="slide__notes">
+            We do not need every tailwind to play out — two of four is enough for the Base case. The Conservative scenario in `doc/FINANCIAL_MODEL_NOTES.md` assumes a softer ag-export environment and still produces stabilized EBITDA above debt service.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 5 — Market -->
+      <section class="slide" id="slide-5" aria-label="Market">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Market</span>
+          <h2>Sized to a 75-mile drayage radius and a 350-mile transload reach.</h2>
+          <ul>
+            <li><strong>Container yard:</strong> 60,000–75,000 TEU per year stabilized (slot × dwell × utilization math in `doc/MARKET_RESEARCH.md`).</li>
+            <li><strong>Transload:</strong> 3,500–4,500 boxes per year at two doors, one shift, with ag-peak surge.</li>
+            <li><strong>Warehousing:</strong> ~100,000 sq ft standard + ~40,000 sq ft bonded.</li>
+            <li><strong>Anchors within reach:</strong> Bunge, ADM, Cargill, CHS, Tyson, Smithfield, JBS — plus the appliance / e-mobility / automotive parts import flow into the upper Midwest.</li>
+          </ul>
+          <aside class="slide__notes">
+            Sizing is a slot-times-dwell exercise, not a top-down "% of TAM" guess. Walk the room through the math on the page in `doc/MARKET_RESEARCH.md`. Confidence is medium until carrier interviews convert the throughput assumptions into named accounts.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 6 — Customers and Traction -->
+      <section class="slide" id="slide-6" aria-label="Customers and Traction">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Customers &amp; Traction</span>
+          <h2>Five segments. Three early. One discovery plan.</h2>
+          <ul>
+            <li><strong>Steamship lines</strong> — carrier-named inland depot for empties &amp; laden boxes.</li>
+            <li><strong>Ag exporters</strong> — predictable empties, food-grade transload, harvest surge capacity.</li>
+            <li><strong>Import distributors</strong> — bonded / FTZ storage closer to upper-Midwest demand.</li>
+            <li><strong>NVOCCs &amp; forwarders</strong> — flexible CY and transload labor.</li>
+            <li><strong>Regional 3PLs &amp; brokers</strong> — overflow capacity.</li>
+          </ul>
+          <p>Mr. Xu's relationships make carriers, ag exporters, and import distributors the first three to convert. <strong>20-interview discovery plan in flight over 90 days.</strong></p>
+          <aside class="slide__notes">
+            Be explicit: hard commitments are not in place yet. The plan is to convert relationship capital into LOIs during Phase 0 — at least 2 carriers naming the facility and 2 ag exporters signing 12-month transload commitments before paving completes. This slide gets updated as `doc/CUSTOMER_DISCOVERY.md` fills in.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 7 — Founder -->
+      <section class="slide" id="slide-7" aria-label="Founder">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Founder</span>
+          <h2>Mr. Xu — 40+ years in ocean freight, 7 years owning his trucking company.</h2>
+          <ul>
+            <li><strong>Ocean-side credibility</strong> shortens the carrier-approval cycle from years to months.</li>
+            <li><strong>Direct relationships</strong> with steamship lines, ag exporters, and import distributors.</li>
+            <li><strong>Captive drayage</strong> means cost-advantaged moves from day one — operational risk goes down, not up, at opening.</li>
+          </ul>
+          <aside class="slide__notes">
+            The founder advantage is not any one of these credentials — it is all three together. Ocean-side credibility opens the carrier conversation. The trucking company de-risks operations and economics. The 40 years cuts the sales cycle. Investors should weigh this slide heavily; this is the line on the page that is hardest to replicate.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 8 — Competition -->
+      <section class="slide" id="slide-8" aria-label="Competition">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Competition</span>
+          <h2>Carrier-neutral, multi-service, founder-anchored.</h2>
+          <ul>
+            <li><strong>Rail-owned terminals (UP, BNSF)</strong> — captive to their own network; not flexible third-party CYs.</li>
+            <li><strong>Existing third-party CYs in CB / Omaha</strong> — smaller acreage, rarely combine all four service lines.</li>
+            <li><strong>Coastal inland-port operators</strong> (Chicago, KC, Dallas) — geographically displaced from upper-Midwest demand.</li>
+          </ul>
+          <p>Risks: a national 3PL entry; rail policy change on third-party depots. Mitigations: multi-carrier diversification and a deep bonded tenant book.</p>
+          <aside class="slide__notes">
+            Detail in `doc/COMPETITIVE_LANDSCAPE.md`. Be candid about risks. A factual answer to "what stops Hub Group from doing this?" is the right answer to give in the room: time, founder access to carriers, and the specific 21 acres next to Bunge and the UP yard.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 9 — Business Model -->
+      <section class="slide" id="slide-9" aria-label="Business Model">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Business Model</span>
+          <h2>Six revenue lines. Multiple cycles inside one P&amp;L.</h2>
+          <ul>
+            <li>CY storage (loaded / empty) + gate fees.</li>
+            <li>Transload throughput (per container, ag premium).</li>
+            <li>Standard warehouse storage + handling.</li>
+            <li>Bonded storage at +25–40% premium + customs service fees.</li>
+            <li>Captive drayage (in-radius blended).</li>
+            <li>Optional value-add: light M&amp;R, kitting, labeling, partner fumigation.</li>
+          </ul>
+          <p>Pricing bands in <code>doc/BUSINESS_ASSUMPTIONS.md</code> (P-01 through P-09). All DRAFT pending a market-rate survey.</p>
+          <aside class="slide__notes">
+            The reason this P&amp;L is more resilient than a single-service CY or warehouse is the cycle mix: CY tracks carrier cycles, transload tracks the ag-export cycle, bonded tracks the import / tariff cycle. They are not perfectly correlated, which smooths revenue over a 7-year hold.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 10 — Financials -->
+      <section class="slide" id="slide-10" aria-label="Financials">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Financials <span class="slide__draft">Draft, Base</span></span>
+          <h2>$22M revenue and $6–8M EBITDA by Year 4 (Base).</h2>
+          <table class="fin-table" aria-label="Base-case revenue and EBITDA by year">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Yr 1</th>
+                <th>Yr 2</th>
+                <th>Yr 3</th>
+                <th>Yr 4</th>
+                <th>Yr 7</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>Revenue</th><td>$5M</td><td>$10M</td><td>$15M</td><td>$22M</td><td>$28M</td></tr>
+              <tr><th>EBITDA</th><td>$1M</td><td>$3.5M</td><td>$6.5M</td><td>$6–8M</td><td>$10M+</td></tr>
+              <tr><th>Margin</th><td>~20%</td><td>~35%</td><td>~43%</td><td>~28–35%</td><td>~36–40%</td></tr>
+            </tbody>
+          </table>
+          <p>Year 4 margin dip = bonded ramp cost. Structural margin re-expands in Years 5–7.</p>
+          <aside class="slide__notes">
+            Three scenarios — Conservative / Base / Upside — in `doc/FINANCIAL_MODEL_NOTES.md`. These are planning estimates, not guarantees. Sensitivities: carrier ramp speed, paving spec, soybean / pork export volumes, tariff regime, interest rate on senior debt, driver wage inflation. Spreadsheet model is the next deliverable; this slide is updated once Mr. Xu and a CPA have signed off on the bands.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 11 — Roadmap -->
+      <section class="slide" id="slide-11" aria-label="Roadmap">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Roadmap</span>
+          <h2>~30 months from term sheet to bonded-warehouse open.</h2>
+          <ul class="roadmap">
+            <li><strong>Phase 0 · Months 1–9</strong>Diligence, design, permits, customer LOIs, capital close.</li>
+            <li><strong>Phase 1 · Months 6–12</strong>Site work, paved container yard, transload pad, initial equipment, gate. <em>Revenue ON.</em></li>
+            <li><strong>Phase 2 · Months 12–24</strong>~100,000 sq ft standard warehouse with rack and dock equipment.</li>
+            <li><strong>Phase 3 · Months 18–30</strong>~40,000 sq ft bonded warehouse; CBP approval; optional FTZ #64 subzone activation.</li>
+          </ul>
+          <aside class="slide__notes">
+            Critical path is regulatory, not construction: CBP bonded warehouse application typically takes 4–9 months from a complete file. We submit during Phase 2 so it lands when the building is ready. FTZ #64 subzone is the parallel option if the tenant pipeline favors that wrapper.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 12 — Ask -->
+      <section class="slide" id="slide-12" aria-label="Ask">
+        <div class="slide__inner">
+          <span class="slide__eyebrow">Ask <span class="slide__draft">Pending Mr. Xu &amp; CPA review</span></span>
+          <h2>Phase 1: $18M–$24M, blended stack.</h2>
+          <ul>
+            <li><strong>Owner equity</strong> + <strong>senior CRE construction-to-perm debt</strong> (community / regional bank; SBA 504 portion possible).</li>
+            <li><strong>Equipment financing</strong> for reach stackers, top picks, yard tractors, forklifts.</li>
+            <li><strong>Iowa / Pottawattamie / Council Bluffs incentives</strong> (IEDA HQJP, Urban Revitalization Plan abatement).</li>
+            <li><strong>Optional outside equity</strong> to accelerate Phase 2 / Phase 3.</li>
+          </ul>
+          <p>Decision today: term-sheet engagement on senior debt + indicative equity check from this room. Target Phase 1 close: ~Month 6 from term-sheet signing.</p>
+          <p><a href="/">← Back to deck index</a></p>
+          <aside class="slide__notes">
+            Phased ask matched to milestones is more credible than a single $40M number. Total Phase 0–3 capex is $26M–$49M; we are asking for Phase 0 + Phase 1 today. Phase 2 and Phase 3 are funded from Phase 1 cash flow + incremental debt + optional equity, contingent on signed carrier and tenant commitments. <strong>This slide must not leave the room without Mr. Xu's and a CPA's review.</strong>
+          </aside>
+        </div>
+      </section>
+
     </main>
 
     <nav class="deck__nav" aria-label="Slide navigation">
